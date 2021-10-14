@@ -51,7 +51,7 @@ We launch Pycharm and create a new project.
 We choose the base python interpreter. It is important that this is the python 3.6 version.
 Additionally, we create a new virtual environment (if you have already completed the step with creating the conda environment, we can use it here).
 
-<img src="assets/pycharm.png" width="800">
+<img src="assets/pycharm.png" width="650">
 
 We move the contents of the Autism_Classification folder to the project folder and open the main.py file.
 To install the libraries we open a terminal and then use the command: 
@@ -87,6 +87,12 @@ Train data size: 183
 Valid data size: 21
 Data size test: 88
 
+|Total data size:| 292 |
+|----------------|-----|
+|Train data size:| 183 |
+|Valid data size:|  21 |
+|Data size test: |  88 |
+
 Prepared table of variables for learning. 
 
 <img src="assets/table-final.png" width="450">
@@ -116,16 +122,9 @@ Already after 15 epochs, the accuracy of the model was 100%, but the number of e
 ### c) Model testing.
 The model was used on previously unused test data. The performance metric was used to visualize the effectiveness:
 
-0
-precision
- recall
- f1-score
-support
-avg / total
-  1.00
- 1.00
-  1.00
- 88
+|      -      | precision | recall | f1-score | support |
+|-------------|-----------|--------|----------|---------|
+| avg / total |   1.00    |  1.00  |   1.00   |    88   |
 
 A good result was obtained for 100% of the data, which proves the high accuracy of the network. 
 
