@@ -86,9 +86,46 @@ Total data size: 292
 Train data size: 183
 Valid data size: 21
 Data size test: 88
+
 Prepared table of variables for learning. 
 
 <img src="assets/table-final.png" width="450">
 
 
+### b) Training the model.
+Once the data had been prepared, the model creation could begin.
+
+```
+model = Sequential()
+model.add(Dense(14, input_dim=14, activation='relu'))
+model.add(Dense(8, activation='relu'))
+model.add(Dense(1, activation='sigmoid'))
+model.compile(loss='binary_crossentropy', optimizer='adam', metrics=['accuracy'])
+```
+
+The model was declared sequential. The neurons in the input layer had a value equal to the number of parameter columns. Additionally, one hidden layer consisting of 8 neurons and the relu activation function was used. The output layer returned the logical value of the parameter, i.e. 1 - for autism and 0 - none.
+
+50 epochs were used for teaching. The results that were obtained are listed below
+```
+Epoch 50/50
+- 0s - loss: 0.0261 - acc: 1.0000 - val_loss: 0.0231 - val_acc: 1.0000
+```
+
+Already after 15 epochs, the accuracy of the model was 100%, but the number of epochs was increased due to the high value of the loss function, which only after 50 epochs remained at the level of about 2.5%.
+
+### c) Model testing.
+The model was used on previously unused test data. The performance metric was used to visualize the effectiveness:
+
+0
+precision
+ recall
+ f1-score
+support
+avg / total
+  1.00
+ 1.00
+  1.00
+ 88
+
+A good result was obtained for 100% of the data, which proves the high accuracy of the network. 
 
